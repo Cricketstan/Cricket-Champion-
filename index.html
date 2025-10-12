@@ -14,7 +14,7 @@
 <style>
 :root {
     --bg-color: #121212;
-    --primary-red: #e50914; 
+    --primary-red: #e50914;
     --primary-red-dark: #b91c1c;
     --card-bg: #1e1e1e;
     --text-light: #f1f5f9;
@@ -41,7 +41,9 @@ body {
     transform: translateY(20px);
     animation: fadeIn 0.5s ease-out forwards;
 }
-@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
 .stream-header {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -139,15 +141,8 @@ body {
 }
 .error-message h2 { color: var(--primary-red); font-size: 1.5rem; margin-bottom: 0.5rem; }
 
-</style>
-</head>
-<body>
-<main class="container">
-    <div id="stream-content"></div>
-</main>
-
-<div class="telegram-popup" id="telegramPopup">
-    <h2><i class="fa-brands fa-telegram"></i> Support Us!</h2>.telegram-popup {
+/* Telegram Popup Styles */
+.telegram-popup {
     position: fixed;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
@@ -178,14 +173,12 @@ body {
     text-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
     margin-bottom: 0.75rem;
 }
-
 .telegram-popup p {
     font-size: 1rem;
     color: var(--text-muted);
     margin-bottom: 1.75rem;
     line-height: 1.5;
 }
-
 .telegram-popup button {
     width: 100%;
     padding: 14px;
@@ -197,28 +190,23 @@ body {
     font-weight: 600;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
-
 .telegram-popup button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
 }
-
 .telegram-popup .join-btn {
     background: linear-gradient(90deg, var(--primary-red), var(--primary-red-dark));
     color: white;
     box-shadow: 0 0 12px rgba(229, 9, 20, 0.4);
 }
-
 .telegram-popup .join-btn:hover {
     box-shadow: 0 0 25px rgba(229, 9, 20, 0.7);
 }
-
 .telegram-popup .joined-btn {
     background-color: var(--border-color);
     color: var(--text-light);
     border: 1px solid var(--primary-red-dark);
 }
-
 @media (max-width: 480px) {
     .telegram-popup {
         padding: 30px 20px;
@@ -226,9 +214,22 @@ body {
     }
     .telegram-popup h2 { font-size: 1.5rem; }
     .telegram-popup p { font-size: 0.9rem; }
-    }
+}
+</style>
+</head>
+
+<body>
+<main class="container">
+    <div id="stream-content"></div>
+</main>
+
+<!-- Telegram Popup -->
+<div class="telegram-popup" id="telegramPopup">
+    <h2><i class="fa-brands fa-telegram"></i> Support Us!</h2>
     <p>Join our Telegram channel <strong>Cricket Champion</strong> for instant updates, highlights, and exclusive links.</p>
-    <a href="https://t.me/+ITRwLanLPc1mZGEx" target="_blank" rel="noopener"><button class="join-btn">Join Now</button></a>
+    <a href="https://t.me/+ITRwLanLPc1mZGEx" target="_blank" rel="noopener">
+        <button class="join-btn">Join Now</button>
+    </a>
     <button class="joined-btn" onclick="document.getElementById('telegramPopup').style.display='none';">Already Joined</button>
 </div>
 
